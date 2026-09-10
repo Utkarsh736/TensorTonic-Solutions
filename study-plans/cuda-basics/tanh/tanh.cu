@@ -4,7 +4,12 @@
 __global__ void tanh_kernel(const float* input, float* output, int N) {
     int idx = blockIdx.x*blockDim.x + threadIdx.x;
     if(idx<N){
-        output[idx] = (__expf(input[idx])-__expf(-input[idx]))/(__expf(input[idx])+__expf(-input[idx]));
+        float val = input[idx];
+
+        float exp_pos = __expf(val);
+        float exp_neg = __expf(-val);
+        
+        output[idx] = (exp_pos-exp_neg)/(exp_pos+exp_neg);
     }
 }
 
