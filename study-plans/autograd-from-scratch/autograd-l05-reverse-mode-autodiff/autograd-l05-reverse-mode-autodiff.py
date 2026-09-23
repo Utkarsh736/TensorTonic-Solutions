@@ -12,7 +12,6 @@ def reverse_mode_autodiff(leaves, operations, output_id):
     all_ids = [l['id'] for l in leaves] + [op['id'] for op in operations]
     position = {nid: i for i,nid in enumerate(all_ids)}
     
-    # Step-2
     def parents_of(nid):
       if nid in op_lookup:
         return op_lookup[nid]['parents']
