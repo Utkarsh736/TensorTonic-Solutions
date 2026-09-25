@@ -81,6 +81,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Run Reverse-Mode Autodiff | Run reverse-mode autodiff over a scalar tree containing leaves and add, multiply, or tanh operations. | https://www.tensortonic.com/study-plans/autograd-from-scratch/autograd-l05-reverse-mode-autodiff |
 | Topologically Sort a Computation DAG | Reverse-mode autodiff must process children before their parents during the backward pass. | https://www.tensortonic.com/study-plans/autograd-from-scratch/autograd-l05-topological-sort |
 | GELU | Implement exact GELU activation in CUDA with one thread per element and the device error-function intrinsic. | https://www.tensortonic.com/study-plans/cuda-basics/cuda/gelu |
+| Matrix-Vector Multiplication | Implement row-major CUDA matrix-vector multiplication with one thread computing each output row. | https://www.tensortonic.com/study-plans/cuda-basics/cuda/gemv |
 | Hadamard Product | Implement elementwise matrix multiplication in CUDA using a two-dimensional grid and row-major bounds-checked indexing. | https://www.tensortonic.com/study-plans/cuda-basics/cuda/hadamard-product |
 | Layer Normalization | Implement fused row-wise LayerNorm in CUDA with shared-memory mean and variance reduction, affine scale, and bias. | https://www.tensortonic.com/study-plans/cuda-basics/cuda/layer-norm |
 | Leaky ReLU | Implement Leaky ReLU activation in CUDA with one thread per element, bounds checks, and a configurable negative slope. | https://www.tensortonic.com/study-plans/cuda-basics/cuda/leaky-relu |
