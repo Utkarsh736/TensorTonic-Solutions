@@ -1,0 +1,61 @@
+import numpy as np
+
+def conv2d_same(x, kernel, bias):
+
+    B, H, W, C_in = x.shape
+    K, _, _, C_out = kernel.shape
+
+    pad_size = K // 2
+    pad_width = ((0, 0), (pad_size, pad_size), (pad_size, pad_size), (0, 0))
+    
+    x_padded = np.pad(x, pad_width=pad_width, mode='constant', constant_values=0)
+    
+    shape_out = (B, H, W, K, K, C_in)
+    strides_out = (
+        x_padded.strides[0],  # Batch stride
+        x_padded.strides[1],  # Row stride
+        x_padded.strides[2],  # Col stride
+        x_padded.strides[1],  # Kernel row stride
+        x_padded.strides[2],  # Kernel col stride
+        x_padded.strides[3]   # Channel stride
+    )
+    
+    windows = np.lib.stride_tricks.as_strided(x_padded, shape=shape_out, strides=strides_out)
+    
+    out = np.einsum('bhwklc,klco->bhwo', windows, kernel)
+    
+    out += bias  # shape: (B, H, W, C_out)
+    
+    return out
+
+def relu(x):
+  return np.maximum(x, 0)
+
+def maxpool2x2(x):
+    B, H, W, C = x.shape
+    
+    # Ensure H and W are even as requested
+    assert H % 2 == 0 and W % 2 == 0, "Height and Width must be even numbers."
+    
+    reshaped_x = x.reshape(B, H // 2, 2, W // 2, 2, C)
+    out = np.max(reshaped_x, axis=(2, 4))
+    
+    return out
+
+def unet_encoder_block(x: np.ndarray, kernel1: np.ndarray, bias1: np.ndarray,
+                       kernel2: np.ndarray, bias2: np.ndarray) -> dict:
+    """
+    Returns pooled and skip as float64 arrays in a dictionary.
+    """
+    conv1 = conv2d_same(x, kernel1, bias1)
+    act1 = relu(conv1)
+    
+    conv2 = conv2d_same(act1, kernel2, bias2)
+    skip = relu(conv2)  
+    
+    pooled = maxpool2x2(skip)
+    
+    return {
+        "skip": skip,       
+        "pooled": pooled    
+    }
