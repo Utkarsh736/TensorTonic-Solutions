@@ -94,6 +94,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Tokenization | Build a word-level Transformer tokenizer with fixed special-token IDs, sorted vocabulary entries, encoding, and decoding. | https://www.tensortonic.com/research/transformer/transformers-tokenization |
 | U-Net Decoder Block | Implement U-Net decoder shape transformations for up-convolution, cropped skip concatenation, and two valid convolutions. | https://www.tensortonic.com/research/unet/unet-decoder-block |
 | U-Net Encoder Block | Implement U-Net encoder shape transformations for two unpadded 3x3 convolutions, a skip output, and 2x2 pooling. | https://www.tensortonic.com/research/unet/unet-encoder-block |
+| U-Net Skip Connections | Implement U-Net skip connections by center-cropping encoder features and concatenating them with decoder features. | https://www.tensortonic.com/research/unet/unet-skip-connection |
 | VAE Encoder | Implement a variational autoencoder encoder that maps inputs to separate latent mean and log-variance vectors. | https://www.tensortonic.com/research/vae/vae-encoder |
 | VGG Classifier Head | Build the VGG classifier by flattening spatial features and applying two ReLU hidden layers plus a logits projection. | https://www.tensortonic.com/research/vgg/vgg-classifier |
 | VGG Configuration | Generate the canonical convolution and max-pooling layer configuration for VGG11, VGG13, VGG16, or VGG19. | https://www.tensortonic.com/research/vgg/vgg-config |
