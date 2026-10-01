@@ -7,7 +7,7 @@ def vae_loss(x: np.ndarray, reconstruction: np.ndarray,
     """
     l_recon = np.mean(np.sum((x-reconstruction)**2, axis=1))
     l_kl = np.mean(np.sum(-0.5*(1 + log_var - mu**2 - np.exp(log_var)), axis=1))
-    l_total = float(l_recon + l_kl)
+    l_total = l_recon + l_kl
 
-    return {"total_loss": l_total, "reconstruction_loss": l_recon, "kl_loss": l_kl}
+    return {"total_loss": float(l_total), "reconstruction_loss": float(l_recon), "kl_loss": float(l_kl)}
                       
