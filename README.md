@@ -103,6 +103,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | U-Net Output Layer | Implement the U-Net output layer as a 1x1 channel projection that maps decoder features to per-pixel class logits. | https://www.tensortonic.com/research/unet/unet-output-layer |
 | U-Net Skip Connections | Implement U-Net skip connections by center-cropping encoder features and concatenating them with decoder features. | https://www.tensortonic.com/research/unet/unet-skip-connection |
 | VAE Encoder | Implement a variational autoencoder encoder that maps inputs to separate latent mean and log-variance vectors. | https://www.tensortonic.com/research/vae/vae-encoder |
+| Reparameterization Trick | Implement the VAE reparameterization trick by sampling latent vectors from the predicted mean and log variance. | https://www.tensortonic.com/research/vae/vae-reparameterization |
 | VGG Classifier Head | Build the VGG classifier by flattening spatial features and applying two ReLU hidden layers plus a logits projection. | https://www.tensortonic.com/research/vgg/vgg-classifier |
 | VGG Configuration | Generate the canonical convolution and max-pooling layer configuration for VGG11, VGG13, VGG16, or VGG19. | https://www.tensortonic.com/research/vgg/vgg-config |
 | VGG Conv Block | Implement a VGG convolutional block as sequential channel projections with ReLU activation at every spatial position. | https://www.tensortonic.com/research/vgg/vgg-conv-block |
