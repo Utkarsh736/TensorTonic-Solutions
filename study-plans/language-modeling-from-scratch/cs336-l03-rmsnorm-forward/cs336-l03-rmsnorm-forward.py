@@ -8,4 +8,4 @@ def rmsnorm(x: torch.Tensor, g: torch.Tensor, epsilon: float) -> torch.Tensor:
     g_float = g.float()
     mean_sq = torch.mean(x.pow(2), dim=-1, keepdim=True)
 
-    return (x*g/torch.sqrt(mean_sq+epsilon)).to(x.dtype)
+    return (x_float*g_float/torch.sqrt(mean_sq+epsilon)).to(x.dtype)
