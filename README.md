@@ -98,6 +98,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Reverse Diffusion Process | Implement one DDPM reverse-process step using the model's predicted noise and the schedule coefficients. | https://www.tensortonic.com/research/ddpm/ddpm-reverse |
 | DDPM Sampling | Implement iterative DDPM sampling from Gaussian noise by applying the learned reverse process over all timesteps. | https://www.tensortonic.com/research/ddpm/ddpm-sampling |
 | Noise Schedule | Generate a DDPM noise schedule with beta values and cumulative alpha products used across diffusion timesteps. | https://www.tensortonic.com/research/ddpm/ddpm-schedule |
+| Channel Growth and Compression | Compute DenseNet channel growth across dense blocks and transition compression from the initial channels and growth rate. | https://www.tensortonic.com/research/densenet/densenet-channels |
 | GAN Discriminator | Implement a GAN discriminator that maps input samples through dense layers to real-versus-fake probabilities. | https://www.tensortonic.com/research/gan/gan-discriminator |
 | Complete GAN System | Assemble a complete GAN system that generates samples, scores them with the discriminator, and returns both outputs. | https://www.tensortonic.com/research/gan/gan-full-network |
 | GAN Generator | Implement a GAN generator that transforms latent noise through learned dense layers into generated samples. | https://www.tensortonic.com/research/gan/gan-generator |
