@@ -145,6 +145,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Input Gate | Implement the LSTM input gate and candidate activation that control new information written to the cell state. | https://www.tensortonic.com/research/lstm/lstm-input-gate |
 | Output Gate | Implement the LSTM output gate and expose the current hidden state from the updated cell memory. | https://www.tensortonic.com/research/lstm/lstm-output-gate |
 | Gated Residual Read | Build the Qwen4-Max Gated Residual read that normalizes four residual branches, gates every channel, and averages them into one sublayer input. | https://www.tensortonic.com/research/qwen4-max/q4m-gated-residual-read |
+| Gated Residual Write | Write a sublayer output back into four Qwen4-Max residual branches with per-branch scales between zero and two computed from normalized branches. | https://www.tensortonic.com/research/qwen4-max/q4m-gated-residual-write |
 | N-gram Hashing | Compute Qwen4-Max N-gram hash ids with the Engram multiplicative-XOR hash over suffix n-grams and prime-sized heads. | https://www.tensortonic.com/research/qwen4-max/q4m-ngram-hashing |
 | BatchNorm in ResNet | Implement ResNet batch normalization with channel statistics, learned scale and bias, and training or inference behavior. | https://www.tensortonic.com/research/resnet/resnet-batch-norm |
 | Bottleneck Block | Build a ResNet bottleneck block using 1x1 channel reduction, 3x3 convolution, and 1x1 channel expansion. | https://www.tensortonic.com/research/resnet/resnet-bottleneck |
